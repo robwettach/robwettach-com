@@ -1,0 +1,17 @@
+#extend("base")
+
+#export("body") {
+  #loop(posts, "post") {
+    <div class="row u-full-width">
+      <div class="row">
+        <h2>#(post.title)</h2>
+      </div>
+      <div class="row">
+        <p>#(post.dateStr) by #(post.author.username)</p>
+      </div>
+      <div class="row">
+        #raw(post.body)
+      </div>
+    </div>
+  }
+}

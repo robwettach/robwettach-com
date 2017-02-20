@@ -77,7 +77,7 @@ class AuthController {
     return try authenticateGoogle(request: request, endpoint: "register") { account in
       // Check that the account is me!
       if account.email != "rob@robwettach.com" {
-        throw Abort.custom(status: Status.notFound, message: "That's not me!")
+        throw Abort.custom(status: .notFound, message: "That's not me!")
       }
 
       try _ = User.register(credentials: account)

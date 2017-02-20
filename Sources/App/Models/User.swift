@@ -103,8 +103,8 @@ extension User : Authenticator {
   }
 }
 
-// MARK: NodeRepresentable
-extension User : NodeRepresentable {
+// MARK: NodeConvertible
+extension User : NodeConvertible {
   convenience init(node: Node, in context: Context) throws {
     let id = node[Const.id]
     let username: String = try node.extract(Const.username)
